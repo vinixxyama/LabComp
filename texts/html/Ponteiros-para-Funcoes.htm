@@ -1,0 +1,400 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="Ponteiros-para-Funcoes_arquivos/filelist.xml">
+<title>Ponteiros para Funções</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>José de Oliveira Guimarães</o:Author>
+  <o:LastAuthor>José de Oliveira Guimarães</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>6</o:TotalTime>
+  <o:Created>2003-07-15T18:51:00Z</o:Created>
+  <o:LastSaved>2003-07-16T19:03:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>432</o:Words>
+  <o:Characters>2465</o:Characters>
+  <o:Company>UFSCar</o:Company>
+  <o:Lines>20</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>2892</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabela normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=PT-BR
+style='font-size:18.0pt;mso-ansi-language:PT-BR'>Ponteiros para Funções<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Em C,
+podemos declarar um ponteiro para função com a sintaxe<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>     </span>void
+(*f)();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>neste caso,
+f é um ponteiro para uma função sem parâmetros e que retorna void. f pode
+apontar para uma função compatível :<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>     </span>f = maximo;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>maximo é
+uma função declarada como <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>void maximo()
+{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>      </span>puts(“Olá
+! Eu sou o máximo”);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>maximo pode
+ser chamada a partir de<span style='mso-spacerun:yes'>  </span>f<span
+style='mso-spacerun:yes'>   </span>usando-se quaisquer das sintaxes abaixo.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>    
+</span>(*f)();<span style='mso-spacerun:yes'>      </span>/* chama maximo */<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>     </span>f();<span
+style='mso-spacerun:yes'>      </span><span
+style='mso-spacerun:yes'>   </span>/* chama maximo */<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Veja o <a
+href="maximo.htm">programa completo</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><span
+style='mso-tab-count:1'>            </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Podemos
+definir um tipo em C através de typedef:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>typedef<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>      </span>int
+Number[10];<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Agora
+Number é sinônimo de vetores inteiros:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>    </span>Number
+v;<span style='mso-spacerun:yes'>  </span>//<span style='mso-spacerun:yes'>  
+</span>v é um vetor de inteiros de 10 posições<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Da mesma
+forma, podemos definir Func como um ponteiro para funções:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>typedef<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>void
+(*Func)();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>Func f;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>f = maximo;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>f();<span style='mso-spacerun:yes'>   </span>// chama
+maximo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Podemos
+definir também um vetor de ponteiros para funções:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>Func v[] = {<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'>  </span>maximo,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>minimo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>minimo é
+definida como<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>void minimo() {<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>puts(“Oi. Sou
+o mínimo”);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Agora, v é
+um vetor de ponteiros para funções. Ou melhor, v é um vetor de ponteiros para
+funções que não têm parâmetros nem retornam nada. Então v[0] é um ponteiro para
+uma função:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>    </span>v[0]();<span
+style='mso-spacerun:yes'>   </span>//<span style='mso-spacerun:yes'>  
+</span>chama maximo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>    </span>v[1]();<span
+style='mso-spacerun:yes'>   </span>//<span style='mso-spacerun:yes'>  
+</span>chama minimo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   
+</span>(*v[0])();<span style='mso-spacerun:yes'>  </span>// chama maximo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   
+</span>(*v[1])();<span style='mso-spacerun:yes'>  </span>// chama minimo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Até agora
+vimos apenas funções sem parâmetros e sem tipo de retorno. E se tivermos uma
+função<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>int addOne(int
+i) {<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>      </span>return i +
+1;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>?<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Vejamos:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>void (*f)();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>f = addOne;<span style='mso-spacerun:yes'>   </span>//
+oops ...<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>f();<span style='mso-spacerun:yes'>  </span>// oops
+...<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Na
+atribuição, há um erro de tipos. Estamos atribuindo uma função com um parâmetro
+e valor de retorno para um ponteiro para uma função sem parâmetros e sem valor
+de retorno. Temos que usar um cast:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>     </span>f = (void
+(*)()<span style='mso-spacerun:yes'>  </span>)<span style='mso-spacerun:yes'> 
+</span>addOne;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>O tipo
+“void (*)()” lê-se “ponteiro para uma função sem parâmetro retornando void”. Na
+chamada de f, há outro erro. Estamos chamando a função sem passar o parâmetro.
+f<span style='mso-spacerun:yes'>  </span>aponta para addOne que espera um
+parâmetro. Temos que converter f para o tipo de addOne antes de chamar esta
+função:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>     </span>n = ((int
+(*)(int)<span style='mso-spacerun:yes'>  </span>) f)(1);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>O tipo “int
+(*)(int)”<span style='mso-spacerun:yes'>  </span>é um ponteiro para uma função
+que tem um inteiro como parâmetro e retorna valor inteiro. O código completo
+deste exemplo está <a href="../../02-2/lc/addOne.htm">aqui</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><span
+style='mso-tab-count:1'>            </span>Podemos colocar funções de vários
+tipos em um único vetor:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>Func v[] = { <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>maximo,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>addOne,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>minimo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>...<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>v[0]();<span style='mso-spacerun:yes'>   </span>//
+chama maximo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>n = ((int (*)(int)<span style='mso-spacerun:yes'> 
+</span>)<span style='mso-spacerun:yes'>  </span>v[1])(5);<span
+style='mso-spacerun:yes'>   </span>//<span style='mso-spacerun:yes'> 
+</span>chama addOne passando 5 como parâmetro<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>v[2]();<span style='mso-spacerun:yes'>  </span>//
+chama minimo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>Estudando
+detalhadamente o exemplo acima, descobrimos que há um erro de tipos na
+inicialização de v. Cada elemento de v deve ser do tipo Func, função sem
+parâmetros retornando void. Mas addOne possui um parâmetro e retorna int. Então
+devemos usar um cast:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>Func v[] = { <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>maximo,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>(int (*)(int)
+) addOne,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'><span style='mso-spacerun:yes'>   </span>minimo<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='font-size:11.0pt;font-family:"Courier New";
+mso-ansi-language:PT-BR'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=PT-BR style='mso-ansi-language:PT-BR'>É so.<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
