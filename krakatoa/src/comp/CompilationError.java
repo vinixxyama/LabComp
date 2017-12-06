@@ -1,10 +1,6 @@
-package comp;
+// Vinicius Yamamoto    490105
 
-/**
- * a compilation error
- * 
-   @author José
- */
+package comp;
 public class CompilationError {
 
 

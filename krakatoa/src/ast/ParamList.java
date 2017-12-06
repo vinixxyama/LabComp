@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 import java.util.*;
@@ -19,6 +21,16 @@ public class ParamList {
     public int getSize() {
         return paramList.size();
     }
+    
+    public ArrayList<Variable> getarray() {
+    	return paramList;
+    }
+    
+    public void geKra(PW pw) {
+		for(int i = 0;i<paramList.size();i++) {
+			paramList.get(i).getKra(pw);
+		}
+	}
 
     private ArrayList<Variable> paramList;
 

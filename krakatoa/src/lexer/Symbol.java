@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package lexer;
 
 public enum Symbol {

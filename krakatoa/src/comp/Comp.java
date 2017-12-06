@@ -1,14 +1,21 @@
 package comp;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import ast.*;
+import ast.MetaobjectCall;
+import ast.PW;
+import ast.Program;
 
 public class Comp {
 
 	public static void main( String []args ) {
 		new Comp().run(args);
 	}
-	
+
     public void run( String []args ) {
 
         File file;
@@ -18,11 +25,11 @@ public class Comp {
             System.out.println("the output file will be created in the current directory");
         }
         else {
-        	
+
            numSourceFilesWithErros = 0;
            int numSourceFiles = 0;
-           shouldButWereNotList = new ArrayList<>(); 
-           wereButShouldNotList = new ArrayList<>(); 
+           shouldButWereNotList = new ArrayList<>();
+           wereButShouldNotList = new ArrayList<>();
            wereButWrongLineList = new ArrayList<>();
            correctList = new ArrayList<>();
 
@@ -40,8 +47,8 @@ public class Comp {
               return ;
            }
            report = new PrintWriter(reportStream);
-           
- 
+
+
 
            file = new File(args[0]);
            if ( ! file.exists() || ! file.canRead() ) {
@@ -51,7 +58,7 @@ public class Comp {
                outError.close();
                report.close();
                return ;
-             }           
+             }
            if ( file.isDirectory() ) {
         	   // compile all files in this directory
         	   File fileList[] = file.listFiles();
@@ -65,18 +72,20 @@ public class Comp {
         			       compileProgram(f, filename, outError);
         			   } catch (RuntimeException e ) {
         				   System.out.println("Runtime exception");
+        				   e.printStackTrace();
         			   }
         			   catch (Throwable t) {
+        				   t.printStackTrace();
         				   System.out.println("Throwable exception");
         			   }
         		   }
         	   }
         	   printReport(numSourceFiles, report);
-               
+
            }
            else {
                compileProgram(file, args[0], outError);
-        	   printReport(1, report);           
+        	   printReport(1, report);
            }
 
 
@@ -89,9 +98,9 @@ public class Comp {
              pw.set(outError);
              stat.genC(pw);
              outError.flush();
-             
+
              */
-            
+
         }
    }
 
@@ -104,16 +113,16 @@ public class Comp {
 		report.println("Relatório do Compilador");
 		   report.println();
 		   if ( numSourceFilesWithErros > 0 ) {
-			   report.println(this.shouldButWereNotList.size() + " de um total de " + numSourceFilesWithErros + 
+			   report.println(this.shouldButWereNotList.size() + " de um total de " + numSourceFilesWithErros +
 					   " erros que deveriam ser sinalizados não o foram (" +
 			              (int ) (100.0*this.shouldButWereNotList.size()/this.numSourceFilesWithErros) + "%)");
-			   report.println(this.wereButWrongLineList.size() + " erros foram sinalizados na linha errada (" 
+			   report.println(this.wereButWrongLineList.size() + " erros foram sinalizados na linha errada ("
 					   + (int ) (100.0*this.wereButWrongLineList.size()/this.numSourceFilesWithErros) + "%)");
 		   }
 		   if ( numSourceFiles -  numSourceFilesWithErros != 0 ) {
-			   report.println(this.wereButShouldNotList.size() +  
-			              " erros foram sinalizados em " + (numSourceFiles -  numSourceFilesWithErros) 
-			              + " arquivos sem erro (" + 
+			   report.println(this.wereButShouldNotList.size() +
+			              " erros foram sinalizados em " + (numSourceFiles -  numSourceFilesWithErros)
+			              + " arquivos sem erro (" +
 			              (int ) (100.0*this.wereButShouldNotList.size()/(numSourceFiles -  numSourceFilesWithErros)) + "%)"
 					   );
 		   }
@@ -132,7 +141,7 @@ public class Comp {
 					   report.println();
 				   }
 			   }
-			   
+
 			   if ( wereButWrongLineList.size() == 0 ) {
 				   report.println("Um ou mais arquivos de teste tinham erros, mas estes foram sinalizados nos números de linhas corretos");
 			   }
@@ -147,7 +156,7 @@ public class Comp {
 				   }
 
 			   }
-			   
+
 		   }
 		   if ( numSourceFiles -  numSourceFilesWithErros != 0  ) {
 			   if ( wereButShouldNotList.size() == 0 ) {
@@ -164,7 +173,7 @@ public class Comp {
 				   }
 			   }
 		   }
-		   
+
 		   if ( correctList.size() > 0 ) {
 			   report.println("######################################################");
 			   report.print("Em todos os testes abaixo, o compilador sinalizou o erro na linha correta (quando o teste tinha erros) ");
@@ -181,22 +190,22 @@ public class Comp {
 			   }
 		   }
 		   if ( compilerOk ) {
-			   if ( numSourceFiles == 1 ) 
+			   if ( numSourceFiles == 1 )
 				   report.println("Para o caso de teste que você utilizou, o compilador está correto");
 			   else
 				   report.println("Para os casos de teste que você utilizou, o compilador está correto");
 
 		   }
-		   
+
 	}
-    
+
 	/**
 	   @param args
 	   @param stream
 	   @param numChRead
 	   @param outError
 	   @param printWriter
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	private void compileProgram(File file, String filename, PrintWriter outError)  {
 		Program program;
@@ -217,7 +226,7 @@ public class Comp {
            try {
              numChRead = stream.read( input, 0, (int ) file.length() );
              if ( numChRead != file.length() ) {
-                 outError.println("Read error");
+                 outError.println("Read error in file " + filename);
                  stream.close();
                  return ;
              }
@@ -238,31 +247,32 @@ public class Comp {
            program  = compiler.compile(input, outError );
            callMetaobjects(filename, program, outError);
 
-           
+
            if ( ! program.hasCompilationErrors() ) {
-        	   
+
                String outputFileName;
-        	   
+
                int lastIndex;
                if ( (lastIndex = filename.lastIndexOf('.')) == -1 )
                   lastIndex = filename.length();
                outputFileName = filename.substring(0, lastIndex);
                if ( (lastIndex = filename.lastIndexOf('\\')) != -1 )
-            	   outputFileName = filename.substring(lastIndex + 1);
-        	   
-        	   
-        	   
+            	   outputFileName = outputFileName.substring(lastIndex + 1);
+
+
+
                FileOutputStream  outputStream;
                try {
-                  outputStream = new FileOutputStream(outputFileName + ".kra2");
+            	   outputFileName = outputFileName + ".cpp";
+                  outputStream = new FileOutputStream(outputFileName);
                } catch ( IOException e ) {
                    String msg = "File " + outputFileName + " was not found";
                    outError.println(msg);
                    return ;
                }
                PrintWriter printWriter = new PrintWriter(outputStream);
-        	   
-        	   
+
+
               PW pw = new PW();
               pw.set(printWriter);
               program.genKra( pw );
@@ -278,31 +288,31 @@ public class Comp {
 	 */
 	private int	numSourceFilesWithErros;
 
-    
-    
+
+
 	public void callMetaobjects(String filename, Program program, PrintWriter outError) {
-		
+
 		boolean foundCE = false;
 		boolean foundNCE = false;
 		for ( MetaobjectCall moCall : program.getMetaobjectCallList() ) {
 			if ( moCall.getName().equals("ce") ) {
 				this.numSourceFilesWithErros++;
-				
+
 				String message = (String ) moCall.getParamList().get(2);
 				int lineNumber = (Integer ) moCall.getParamList().get(0);
 				if ( ! program.hasCompilationErrors() ) {
 					// there was no compilation error. There should be no call @ce(...)
-					// the source code, through calls to "@ce(...)", informs that 
+					// the source code, through calls to "@ce(...)", informs that
 					// there are errors
 					String whatToCorrect = "";
 					if ( moCall.getParamList().size() >= 4 ) {
 						whatToCorrect = (String ) moCall.getParamList().get(3);
 						whatToCorrect = " (" + whatToCorrect + ")";
 					}
-					this.shouldButWereNotList.add(filename + ", " + lineNumber + ", " + message + 
-							whatToCorrect 
+					this.shouldButWereNotList.add(filename + ", " + lineNumber + ", " + message +
+							whatToCorrect
 							);
-					if ( foundCE ) 
+					if ( foundCE )
 						outError.println("More than one 'ce' metaobject calls in the same source file '" + filename + "'");
 					foundCE = true;
 				}
@@ -312,29 +322,29 @@ public class Comp {
 					String ceMessage = (String ) moCall.getParamList().get(2);
 					String compilerMessage = program.getCompilationErrorList().get(0).getMessage();
 					if ( lineNumber != lineOfError ) {
-						
+
 						String whatToCorrect = "";
 						if ( moCall.getParamList().size() >= 4 ) {
 							whatToCorrect = (String ) moCall.getParamList().get(3);
 							whatToCorrect = "(" + whatToCorrect + ")";
 						}
-						
-						
-						this.wereButWrongLineList.add(filename + "\n" + 
+
+
+						this.wereButWrongLineList.add(filename + "\n" +
 							     "    correto:    " + lineNumber + ", " + ceMessage + " " + whatToCorrect + "\n" +
 							     "    sinalizado: " + lineOfError + ", " + compilerMessage);
 					}
 					else {
 						// the compiler is correct. Add to correctList the message
 						// that the compiler signalled and the message of the test, given in @ce
-						correctList.add(filename + "\r\n" + 
-						    "The compiler message was: \"" + compilerMessage + "\"\r\n" + 
+						correctList.add(filename + "\r\n" +
+						    "The compiler message was: \"" + compilerMessage + "\"\r\n" +
 						    "The 'ce' message is:      \"" + ceMessage + "\"\r\n" );
 					}
 				}
 			}
 			else if ( moCall.getName().equals("nce") ) {
-				if ( foundNCE ) 
+				if ( foundNCE )
 					outError.println("More than one 'nce' metaobject calls in the same source file '" + filename + "'");
 				foundNCE = true;
 				if ( program.hasCompilationErrors() ) {
@@ -346,9 +356,9 @@ public class Comp {
 		}
 		if ( foundCE && foundNCE )
 			outError.println("Calls to metaobjects 'ce' and 'nce' in the same source code '" + filename + "'");
-		
+
 	}
-	
+
 	ArrayList<String> shouldButWereNotList, wereButShouldNotList, wereButWrongLineList, correctList;
-    
+
 }

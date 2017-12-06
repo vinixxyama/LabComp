@@ -9,15 +9,16 @@
 
 class A {
      
-   public void run() { }
+    public void run() { }
    
-   public void m() {
-      A a;
-      
-      a = null;
-      a.m();
-   }   
-
+    public void m() {
+       A a;
+       a = null;
+	   a = new A();
+       a.m();
+    }   
+    public void p() {
+	}
 }
 
 

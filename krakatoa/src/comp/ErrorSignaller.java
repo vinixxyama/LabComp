@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package comp;
 import java.io.*;
 import java.util.ArrayList;
@@ -52,7 +54,7 @@ public class ErrorSignaller {
       foundCompilerError = true;
       CompilationError newError = new CompilationError(strMessage, lineNumber, lineWithError);
       compilationErrorList.add(newError);
-      throw new RuntimeException();
+      throw new CompilerError();
    }
 
 

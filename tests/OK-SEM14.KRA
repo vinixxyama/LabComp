@@ -24,13 +24,13 @@ class Program {
       a = null;
       b = null;
       a2 = null;
-      if (a == b) {
+      if ( a == b ) {
          write( 0 );
       }
-      if (b == a) {
+      if ( b == a ) {
          write( 1 );
       }
-      if (a == a2) {
+      if ( a == a2 ) {
          write( 2 );
       }
    }   

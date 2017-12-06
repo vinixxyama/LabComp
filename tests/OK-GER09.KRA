@@ -39,7 +39,6 @@ class C extends B {
       this.m3(3);
       write( 4, n );
    }   
-
 }
 
 

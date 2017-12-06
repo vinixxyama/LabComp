@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package lexer;
 
 import java.util.*;
@@ -65,8 +67,41 @@ public class Lexer {
 
 	}
 
+	//Pega o proximo para saber se é A A, A.B, A = B
+	public int proximo(){
+		int index = tokenPos;
+		char ch;
+		
+		while (  (ch = input[index]) == ' ' || ch == '\r' || ch == '\t' || ch == '\n'){
+			index++;
+		}
 
+		while(true){
+			if ( ch == '\0')
+				return 0;
+			else{
+				if ( Character.isLetter( ch ) ){
+					//pega um Indet ou uma palavrachave
+					StringBuffer ident = new StringBuffer();
+					while ( Character.isLetter( ch = input[index] ) || Character.isDigit(ch) || ch == '_' ) {
+							ident.append(input[index]);
+							index++;
+					}
+					String simbolonome = ident.toString();
+						// Se simbolonome estiver na symboltable entao ela é uma palavra chave
+					Symbol value = keywordsTable.get(simbolonome);
 
+					if ( value == null )
+						return 1;
+					else
+						return 0;
+				}
+
+				else
+					return 0;
+			}
+		}
+	}
 
     public void nextToken() {
         char ch;

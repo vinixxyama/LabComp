@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 import java.util.*;
@@ -14,9 +16,13 @@ public class Program {
 
 
 	public void genKra(PW pw) {
-	}
-
-	public void genC(PW pw) {
+		pw.println("#include <iostream>");
+		pw.println("using namespace std;");
+		pw.println("");
+		for(KraClass k : classList){
+			k.genKra(pw);
+			pw.println("");
+		}
 	}
 	
 	public ArrayList<KraClass> getClassList() {

@@ -111,6 +111,7 @@ class Program {
       s = new University();
       s.init("UFSCar", "Sao Carlos", 7000);
       s.print();
+	  writeln("");
       joao = new Person();
       joao.init("Joao", 21);
       joao.setCourse("EnC");
@@ -120,10 +121,13 @@ class Program {
       maria.setCourse("Fisioterapia");
       maria.setNumber(8607);
       joao.print();
+	  writeln("");
       maria.print();
+	  writeln("");
       g = new Group();
       g.set(joao, maria);
       g.print();
+	  writeln("");
    }   
 
 }

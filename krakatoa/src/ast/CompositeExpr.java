@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 import lexer.*;
@@ -12,6 +14,22 @@ public class CompositeExpr extends Expr {
         right = pright;
     }
     
+    public Expr getleft() {
+    	return left;
+    }
+    
+    public Expr getright() {
+    	return right;
+    }
+    
+    public Symbol getoper() {
+    	return oper;
+    }
+    public void genKra(PW pw) {
+		left.genKra(pw);
+		pw.print(" "+oper.toString()+" ");
+    	right.genKra(pw);
+    }
     @Override
 	public void genC( PW pw, boolean putParenthesis ) {
         if ( putParenthesis )

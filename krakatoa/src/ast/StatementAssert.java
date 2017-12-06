@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 public class StatementAssert extends Statement {
@@ -30,6 +32,12 @@ public class StatementAssert extends Statement {
 		return message;
 	}
 
+	@Override
+	public void genKra(PW pw) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	private Expr expr;
 	private int lineNumber;
 	private String message;

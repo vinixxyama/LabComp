@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 public class ParenthesisExpr extends Expr {
@@ -9,6 +11,11 @@ public class ParenthesisExpr extends Expr {
     public void genC( PW pw, boolean putParenthesis ) {
         pw.print("(");
         expr.genC(pw, false);
+        pw.printIdent(")");
+    }
+    public void genKra( PW pw) {
+        pw.print("(");
+        expr.genKra(pw);
         pw.printIdent(")");
     }
     

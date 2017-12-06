@@ -1,3 +1,4 @@
+// Vinicius Yamamoto    490105
 
 package ast;
 
@@ -28,7 +29,11 @@ public class UnaryExpr extends Expr {
 		}
 		expr.genC(pw, false);
 	}
-
+	
+	public void genKra(PW pw) {
+		pw.print(op.toString());
+		expr.genKra(pw);
+	}
 	@Override
 	public Type getType() {
 		return expr.getType();

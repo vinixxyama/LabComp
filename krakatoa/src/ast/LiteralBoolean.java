@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 public class LiteralBoolean extends Expr {
@@ -9,6 +11,10 @@ public class LiteralBoolean extends Expr {
     @Override
 	public void genC( PW pw, boolean putParenthesis ) {
        pw.print( value ? "1" : "0" );
+    }
+    
+    public void genKra(PW pw) {
+    	pw.print(value ? "true" : "false");
     }
 
     @Override

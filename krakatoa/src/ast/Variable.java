@@ -1,3 +1,5 @@
+// Vinicius Yamamoto    490105
+
 package ast;
 
 public class Variable {
@@ -14,7 +16,11 @@ public class Variable {
     public Type getType() {
         return type;
     }
+    
+    public void getKra(PW pw) {
+		pw.print(type.getName() + " " + name);	
+	}
 
-    private String name;
-    private Type type;
+    protected String name;
+    protected Type type;
 }
